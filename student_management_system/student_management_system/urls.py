@@ -29,6 +29,7 @@ urlpatterns = [
 
                 #Hod Views
                 path('Hod/Home', Hod_Views.HOME, name='hod_home'),
+                path('Hod/Student/Add', Hod_Views.ADD_STUDENT, name='add_student'),
 
                 #Profile Update
                 path('profile', views.PROFILE, name='profile'),

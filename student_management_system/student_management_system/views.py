@@ -58,16 +58,17 @@ def PROFILE_UPDATE(request):
       customuser = CustomUser.objects.get(id=request.user.id)
       customuser.first_name = first_name
       customuser.last_name = last_name
+      customuser.profile_pic = profile_pic
       
       if password != None and password != "":
         customuser.set_password(password)
 
-      if profile_pic != None and profile_pic != "":
-        customuser.profile_pic = profile_pic
+      # if profile_pic != None and profile_pic != "":
+      #   customuser.profile_pic = profile_pic
 
       customuser.save()
       messages.success(request,'Profile Updated Successfully')
-      redirect('profile')
+      return redirect('profile')
     except:
       messages.error(request,'Profile not Updated')
 
